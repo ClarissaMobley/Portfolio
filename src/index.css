@@ -1,4 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* 
+.btn {
+  color: black;
+  background:#e4b3b3;
+}
 
+.btn:hover {
+  @apply bg-gradient-to-r from-[#e4b3b3] to-[#7f7fe7];
+} */
