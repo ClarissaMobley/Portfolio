@@ -3,7 +3,7 @@ import MeImage from '../assets/MainPage.png'
 import FullStack from '../assets/full-stack-test-2.png'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
-const Header = () => {
+const Home = () => {
     return (
         <div className='bg-custom text-white py-20' id='home'>
             <div className='container mx-auto px-8 md:px-16 lg:px-24'>
@@ -38,4 +38,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default Home
