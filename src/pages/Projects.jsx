@@ -43,7 +43,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="w-[80%] m-auto pt-11 flex flex-col lg:flex-row gap-4">
+    <div className="w-[80%] m-auto pt-11 flex flex-col lg:flex-row gap-4 animate-fadeIn">
       <div className="bg-[#b77676] p-4 rounded-lg shadow-lg flex-1">
         <div className="overflow-hidden relative mt-3">
           <div
