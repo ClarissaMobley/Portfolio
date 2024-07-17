@@ -6,6 +6,18 @@ nav {
   font-family: "Arsenal SC", sans-serif;
 }
 
+h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+h3 {
+  font-family: "Roboto", sans-serif;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
 /* 
 .btn {
   color: black;

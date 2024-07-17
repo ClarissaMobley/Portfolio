@@ -10,7 +10,7 @@ export default {
         'custom': '#914949'
       },
       animation: {
-        fadeIn: 'fadeIn 3s ease-in-out',
+        fadeIn: 'fadeIn 2s ease-in-out',
         zoomIn: 'zoomIn 0.5s ease-in-out',
       },
       keyframes: {
