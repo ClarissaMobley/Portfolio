@@ -10,8 +10,7 @@ const About = () => {
                 <div className='flex flex-col md:flex-row items-center md:space-x-12 animate-fadeIn'>
                     <img src={AboutMeImage} alt="About Me" className='w-full md:w-96 mb-8 md:mb-0 hover:scale-105 transition-transform duration-300' />
                     <div className='flex-1'>
-                        {/* <h2 className='text-4xl md:text-6xl text-[#e4b3b3] font-bold text-start mb-4 md:mb-6'>About Me</h2> */}
-                        <h3 className='text-xl md:text-4xl font-bold mb-3'>I'm Clarissa Mobley, a Full-Stack Developer based in Atlanta, GA.</h3>
+                        <h3 className='text-xl md:text-5xl mb-3'>I'm Clarissa Mobley, a Full-Stack Developer based in Atlanta, GA.</h3>
                         <p className='text-sm md:text-base mb-6'> I have a solid foundation in HTML, CSS, and JavaScript. Before transitioning into tech, 
                             I spent 11 years in the set decoration department for films, where I developed a strong eye for visual storytelling 
                             and attention to detail. This experience helped shape my approach to web development, enabling me to create applications 
@@ -26,7 +25,7 @@ const About = () => {
                             technologies, I'm committed to solving complex problems and delivering solutions. Whether it's creating RESTful APIs, implementing 
                             responsive design, or optimizing database performance, I'm focused on making sure that I meet and exceed the needs of users.
                         </p>
-                        <div className='w-full bg-[#b77676] mt-8 p-4 flex flex-wrap justify-center space-x-2 md:space-x-4 rounded-lg'>
+                        <div className='w-full bg-[#b77676] mt-4 p-4 flex flex-wrap justify-center space-x-2 md:space-x-4 rounded-lg'>
                             <FaHtml5 className='text-white hover:scale-125 transition-transform duration-300 text-2xl md:text-3xl' />
                             <FaCss3Alt className='text-white hover:scale-125 transition-transform duration-300 text-2xl md:text-3xl' />
                             <FaJs className='text-white hover:scale-125 transition-transform duration-300 text-2xl md:text-3xl' />
