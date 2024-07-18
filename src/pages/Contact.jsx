@@ -19,13 +19,14 @@ const Contact = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            await axios.post(`http://localhost:${PORT}/contact`, formData);
+            await axios.post('http://localhost:3000/contact', formData);
             alert('Message sent!');
-            setFormData({ name:'', email:'', message:'' });
+            setFormData({ name: '', email: '', message: '' });
         } catch (error) {
+            console.error('Error:', error);
             alert('Error sending message!');
         }
-    }
+    };
 
     return (
         <div className='py-20' id='contact'>
@@ -36,40 +37,44 @@ const Contact = () => {
                         <form className="space-y-4" onSubmit={handleSubmit}>
                             <div>
                                 <label htmlFor="name" className="text-white block mb-2 text-xl">Your Name</label>
-                                <input 
-                                    type="text" 
-                                    id="name" 
+                                <input
+                                    type="text"
+                                    id="name"
                                     name="name"
-                                    className="w-full p-2 rounded bg-white border border-[#e4b3b3] focus:outline-none focus:border-[#e4b3b3]" 
-                                    placeholder="Name" 
+                                    className="w-full p-2 rounded bg-white border border-[#e4b3b3] focus:outline-none focus:border-[#e4b3b3]"
+                                    placeholder="Name"
                                     aria-label="Your Name"
+                                    value={formData.name}
+                                    onChange={handleChange}
                                 />
                             </div>
                             <div>
                                 <label htmlFor="email" className="text-white block mb-2 text-xl">Your Email</label>
-                                <input 
-                                    type="email" 
-                                    id="email" 
+                                <input
+                                    type="email"
+                                    id="email"
                                     name="email"
-                                    className="w-full p-2 rounded bg-white border border-[#e4b3b3] focus:outline-none focus:border-[#e4b3b3]" 
-                                    placeholder="Email" 
+                                    className="w-full p-2 rounded bg-white border border-[#e4b3b3] focus:outline-none focus:border-[#e4b3b3]"
+                                    placeholder="Email"
                                     aria-label="Your Email"
-                                    value={formData}
+                                    value={formData.email}
                                     onChange={handleChange}
                                 />
                             </div>
                             <div>
                                 <label htmlFor="message" className="text-white block mb-2 text-xl">Message</label>
-                                <textarea 
-                                    id="message" 
+                                <textarea
+                                    id="message"
                                     name="message"
-                                    className="w-full p-2 rounded bg-white border border-[#e4b3b3] focus:outline-none focus:border-[#e4b3b3]" 
-                                    rows='5' 
-                                    placeholder="Message" 
+                                    className="w-full p-2 rounded bg-white border border-[#e4b3b3] focus:outline-none focus:border-[#e4b3b3]"
+                                    rows='5'
+                                    placeholder="Message"
                                     aria-label="Message"
+                                    value={formData.message}
+                                    onChange={handleChange}
                                 />
                             </div>
-                            <button 
+                            <button
                                 type="submit"
                                 className="btn bg-[#b77676] text-white hidden md:inline transform transition-transform duration-300 hover:scale-105 px-8 py-2 rounded-lg w-full text-xl"
                             >
@@ -84,3 +89,4 @@ const Contact = () => {
 }
 
 export default Contact;
+
