@@ -40,7 +40,7 @@ const Contact = () => {
     }
 
     try {
-      await axios.post('http://localhost:3000/api/contact', formData);
+      await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/contact`, formData);
       navigate('/MessageSent');
     } catch (error) {
       console.error('Error:', error);
@@ -112,5 +112,6 @@ const Contact = () => {
 };
 
 export default Contact;
+
 
 

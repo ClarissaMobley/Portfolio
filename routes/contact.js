@@ -11,6 +11,10 @@ router.post('/contact', async (req, res) => {
   try {
     await contact.save();
 
+    // Debugging: Print environment variables
+    console.log('EMAIL_USER:', process.env.EMAIL_USER);
+    console.log('EMAIL_PASS:', process.env.EMAIL_PASS);
+
     // Set up Nodemailer
     const transporter = nodemailer.createTransport({
       service: 'Gmail',
@@ -29,7 +33,8 @@ router.post('/contact', async (req, res) => {
     };
 
     // Send Email
-    await transporter.sendMail(mailOptions);
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Email sent successfully:', info);
 
     res.status(200).send('Message sent!');
   } catch (error) {
@@ -39,3 +44,4 @@ router.post('/contact', async (req, res) => {
 });
 
 export default router;
+
