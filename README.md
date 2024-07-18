@@ -21,6 +21,8 @@ A portfolio of my work as a full stack web developer.
 
 ## Screen Recording
 
+https://github.com/user-attachments/assets/85bb4408-d055-4d48-901d-a91940bd972f
+
 
 
 ## Built With
