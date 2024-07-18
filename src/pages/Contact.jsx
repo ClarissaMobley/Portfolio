@@ -1,14 +1,39 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import axios from 'axios';
 
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+    });
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            await axios.post(`http://localhost:${PORT}/contact`, formData);
+            alert('Message sent!');
+            setFormData({ name:'', email:'', message:'' });
+        } catch (error) {
+            alert('Error sending message!');
+        }
+    }
+
     return (
         <div className='py-20' id='contact'>
             <div className='container mx-auto px-8 md:px-16 lg:px-24'>
-                <h3 className='text-4xl font-bold text-center mb-12 text-white'>Let's get in touch!</h3>
+                <h3 className='text-4xl font-bold text-center mb-12 text-white'>Get in touch!</h3>
                 <div className='flex justify-center'>
                     <div className="w-full max-w-lg">
-                        <form className="space-y-4">
+                        <form className="space-y-4" onSubmit={handleSubmit}>
                             <div>
                                 <label htmlFor="name" className="text-white block mb-2 text-xl">Your Name</label>
                                 <input 
@@ -29,6 +54,8 @@ const Contact = () => {
                                     className="w-full p-2 rounded bg-white border border-[#e4b3b3] focus:outline-none focus:border-[#e4b3b3]" 
                                     placeholder="Email" 
                                     aria-label="Your Email"
+                                    value={formData}
+                                    onChange={handleChange}
                                 />
                             </div>
                             <div>
