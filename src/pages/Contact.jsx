@@ -44,7 +44,7 @@ const Contact = () => {
       navigate('/MessageSent');
     } catch (error) {
       console.error('Error:', error);
-      navigate('/error');  // Redirect to error page
+      navigate('/error');
     }
   };
 
