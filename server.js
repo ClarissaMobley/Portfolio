@@ -17,8 +17,14 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
-// Routes
-app.use('/api', contactRoutes);
+  app.use(express.static(path.join(__dirname, 'client/build')));
+
+  // Routes
+  app.use('/api', contactRoutes);
+  
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  });
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
