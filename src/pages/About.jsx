@@ -10,7 +10,7 @@ const About = () => {
                 <div className='flex flex-col md:flex-row items-center md:space-x-12 animate-fadeIn'>
                     <img src={AboutMeImage} alt="About Me" className='w-full md:w-96 mb-8 md:mb-0 hover:scale-105 transition-transform duration-300' />
                     <div className='flex-1'>
-                        <h3 className='text-xl md:text-5xl mb-3'>I'm Clarissa Mobley, a Full-Stack Developer based in Atlanta, GA.</h3>
+                        <h3 className='text-3xl md:text-5xl mb-3'>I'm Clarissa Mobley, a Full-Stack Developer based in Atlanta, GA.</h3>
                         <p className='text-sm md:text-base mb-6'> I have a solid foundation in HTML, CSS, and JavaScript. Before transitioning into tech, 
                             I spent 11 years in the set decoration department for films, where I developed a strong eye for visual storytelling 
                             and attention to detail. This experience helped shape my approach to web development, enabling me to create applications 
