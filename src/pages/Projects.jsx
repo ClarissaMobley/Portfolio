@@ -4,8 +4,10 @@ import Moodbar3 from "../assets/moodbar2.png";
 import Moodbar4 from "../assets/moodbar3.png";
 import Moodbar5 from "../assets/moodbar4.png";
 import Zozzled from "../assets/zozzled.png";
-import Zozzled2 from "../assets/zozzled1.png";
 import Zozzled3 from "../assets/zozzled2.png";
+import Zozzled4 from "../assets/zozzleddrink.png";
+import Zozzled5 from "../assets/zozzledmac.png";
+import Zozzled6 from "../assets/zozzledphones.png";
 
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import { CgWebsite } from "react-icons/cg";
@@ -16,7 +18,7 @@ const Projects = () => {
   const [currentSlide2, setCurrentSlide2] = useState(0);
 
   const slides1 = [MoodBar, Moodbar5, Moodbar3, Moodbar4];
-  const slides2 = [Zozzled, Zozzled2, Zozzled3];
+  const slides2 = [Zozzled, Zozzled5, Zozzled4, Zozzled3, Zozzled6];
 
   const previousSlide1 = () => {
     setCurrentSlide1(
@@ -84,10 +86,10 @@ const Projects = () => {
           Mood Bar is a website where every cocktail is tailored to your spirit and mood selection, providing you with a drink complete with its name, image, ingredients, and preparation instructions. Enhance your experience with bartender advice quotes that match your chosen mood and easily save your favorite drinks to a personalized list for future enjoyment.
           </p>
           <div className="flex justify-center space-x-4 mt-4">
-          <a href="https://eddiehinojosa.github.io/TheMoodBar/" className="text-4xl text-white hover:scale-125">
+          <a href="https://eddiehinojosa.github.io/TheMoodBar/" target="__blank" className="text-4xl text-white hover:scale-125">
             <CgWebsite />
           </a>
-          <a href="https://github.com/EddieHinojosa/TheMoodBar" className="text-4xl text-white hover:scale-125">
+          <a href="https://github.com/EddieHinojosa/TheMoodBar" target="__blank" className="text-4xl text-white hover:scale-125">
             <FaGithub />
           </a>
           </div>
@@ -131,10 +133,10 @@ const Projects = () => {
           <h3 className="text-4xl text-white">Zozzled</h3>
           <p>Zozzled is an API directory offering a wide collection of cocktail recipes. Users can log in, search for specific recipes, save their favorites, and add their own cocktail recipes to their profiles. The website also allows users to edit and delete their submissions, browse popular and trending cocktails, and access detailed recipe instructions and ingredient lists.</p>
           <div className="flex justify-center space-x-4 mt-4">
-          <a href="https://zozzled.onrender.com" className="text-4xl text-white hover:scale-125">
+          <a href="https://zozzled.onrender.com" target="__blank" className="text-4xl text-white hover:scale-125">
             <CgWebsite />
           </a>
-          <a href="https://github.com/EddieHinojosa/Cocktail-Directory" className="text-4xl text-white hover:scale-125">
+          <a href="https://github.com/EddieHinojosa/Cocktail-Directory" target="__blank" className="text-4xl text-white hover:scale-125">
             <FaGithub />
           </a>
           </div>
