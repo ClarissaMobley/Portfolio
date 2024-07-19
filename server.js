@@ -9,8 +9,14 @@ import contactRoutes from './routes/contact.js';
 
 const app = express();
 
+const corsOptions = {
+  origin: 'https://www.clarissamobley.com',
+  methods: 'GET,POST,OPTIONS',
+  allowedHeaders: 'Content-Type, Authorization'
+};
+
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 // MongoDB connection
@@ -20,6 +26,9 @@ mongoose.connect(process.env.MONGO_URI)
 
 // Routes
 app.use('/api', contactRoutes);
+app.post('/api/contact', (req, res) => {
+  res.send('Contact API');
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
