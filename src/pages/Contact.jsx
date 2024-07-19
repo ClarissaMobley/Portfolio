@@ -44,7 +44,7 @@ const Contact = () => {
     }
 
     try {
-      const response = await axios.post(`https://clarissamobley.com/api/contact`, formData);
+      const response = await axios.post(`https://wwww.clarissamobley.com/api/contact`, formData);
       navigate('/message-sent');
     } catch (error) {
       console.error('Error:', error);
