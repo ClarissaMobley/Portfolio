@@ -8,7 +8,13 @@ const Contact = () => {
     email: '',
     message: '',
   });
-  const [errors, setErrors] = useState({});
+
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
   const navigate = useNavigate();
 
   const handleChange = (event) => {
@@ -17,31 +23,29 @@ const Contact = () => {
       ...formData,
       [name]: value,
     });
+
     setErrors({
       ...errors,
       [name]: '',
     });
   };
 
-  const validateForm = () => {
-    const newErrors = {};
-    if (!formData.name) newErrors.name = 'Please enter your name';
-    if (!formData.email) newErrors.email = 'Please enter your email';
-    if (!formData.message) newErrors.message = 'Please enter your message';
-    return newErrors;
-  };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const validationErrors = validateForm();
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
+    const newErrors = {};
+
+    if (!formData.name) newErrors.name = 'Name is required';
+    if (!formData.email) newErrors.email = 'Email is required';
+    if (!formData.message) newErrors.message = 'Message is required';
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
       return;
     }
 
     try {
-      await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/contact`, formData);
-      navigate('/MessageSent');
+      const response = await axios.post(`https://clarissamobley.com/api/contact`, formData);
+      navigate('/message-sent');
     } catch (error) {
       console.error('Error:', error);
       navigate('/error');
@@ -49,10 +53,10 @@ const Contact = () => {
   };
 
   return (
-    <div className="py-20" id="contact">
-      <div className="container mx-auto px-8 md:px-16 lg:px-24 animate-fadeIn">
-        <h3 className="text-4xl font-bold text-center mb-12 text-white">Get in touch!</h3>
-        <div className="flex justify-center">
+    <div className='py-20' id='contact'>
+      <div className='container mx-auto px-8 md:px-16 lg:px-24'>
+        <h3 className='text-4xl font-bold text-center mb-12 text-white'>Get in touch!</h3>
+        <div className='flex justify-center'>
           <div className="w-full max-w-lg">
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
@@ -61,13 +65,13 @@ const Contact = () => {
                   type="text"
                   id="name"
                   name="name"
-                  className={`w-full p-2 rounded bg-white border ${errors.name ? 'border-red-500' : 'border-[#e4b3b3]'} focus:outline-none focus:border-[#e4b3b3]`}
+                  className="w-full p-2 rounded bg-white border border-[#e4b3b3] focus:outline-none focus:border-[#e4b3b3]"
                   placeholder="Name"
                   aria-label="Your Name"
                   value={formData.name}
                   onChange={handleChange}
                 />
-                {errors.name && <p className="text-black text-sm mt-1">{errors.name}</p>}
+                {errors.name && <p className="text-black mt-1">{errors.name}</p>}
               </div>
               <div>
                 <label htmlFor="email" className="text-white block mb-2 text-xl">Your Email</label>
@@ -75,27 +79,27 @@ const Contact = () => {
                   type="email"
                   id="email"
                   name="email"
-                  className={`w-full p-2 rounded bg-white border ${errors.email ? 'border-red-500' : 'border-[#e4b3b3]'} focus:outline-none focus:border-[#e4b3b3]`}
+                  className="w-full p-2 rounded bg-white border border-[#e4b3b3] focus:outline-none focus:border-[#e4b3b3]"
                   placeholder="Email"
                   aria-label="Your Email"
                   value={formData.email}
                   onChange={handleChange}
                 />
-                {errors.email && <p className="text-black text-sm mt-1">{errors.email}</p>}
+                {errors.email && <p className="text-black mt-1">{errors.email}</p>}
               </div>
               <div>
                 <label htmlFor="message" className="text-white block mb-2 text-xl">Message</label>
                 <textarea
                   id="message"
                   name="message"
-                  className={`w-full p-2 rounded bg-white border ${errors.message ? 'border-red-500' : 'border-[#e4b3b3]'} focus:outline-none focus:border-[#e4b3b3]`}
-                  rows="5"
+                  className="w-full p-2 rounded bg-white border border-[#e4b3b3] focus:outline-none focus:border-[#e4b3b3]"
+                  rows='5'
                   placeholder="Message"
                   aria-label="Message"
                   value={formData.message}
                   onChange={handleChange}
                 />
-                {errors.message && <p className="text-black text-sm mt-1">{errors.message}</p>}
+                {errors.message && <p className="text-black mt-1">{errors.message}</p>}
               </div>
               <button
                 type="submit"
@@ -109,9 +113,12 @@ const Contact = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Contact;
+
+
+
 
 
 

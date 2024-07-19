@@ -22,23 +22,23 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: 'About',
+        path: 'about',
         element: <About />
       },
       {
-        path: 'Projects',
+        path: 'projects',
         element: <Projects />
       },
       {
-        path: 'Resume',
+        path: 'resume',
         element: <Resume />
       },
       {
-        path: 'Contact',
+        path: 'contact',
         element: <Contact />
       },
       {
-        path: 'MessageSent',
+        path: 'message-sent',
         element: <MessageSent />
       }
     ],
@@ -51,4 +51,3 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <RouterProvider router={router} />
   </React.StrictMode>
 );
-

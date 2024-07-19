@@ -1,10 +1,11 @@
+import React from 'react';
 import { useRouteError } from 'react-router-dom';
 import { FaHome } from "react-icons/fa";
 
-export default function Error() {
+const Error = () => {
   const error = useRouteError();
-  console.log(error);
-  
+  console.error(error);
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-custom">
       <div className="bg-[#b77676] text-white p-8 rounded-lg shadow-lg max-w-lg text-center">
@@ -19,4 +20,6 @@ export default function Error() {
       </div>
     </div>
   );
-}
+};
+
+export default Error;
