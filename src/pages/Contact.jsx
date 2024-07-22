@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -44,7 +44,7 @@ const Contact = () => {
     }
 
     try {
-      const response = await axios.post('https://www.clarissamobley.com/api/contact', formData);
+      await axios.post('https://www.clarissamobley.com/api/contact', formData);
       navigate('/message-sent');
     } catch (error) {
       console.error('Error:', error);

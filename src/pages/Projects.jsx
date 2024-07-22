@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import MoodBar from "../assets/moodbar.png";
 import Moodbar3 from "../assets/moodbar2.png";
 import Moodbar4 from "../assets/moodbar3.png";

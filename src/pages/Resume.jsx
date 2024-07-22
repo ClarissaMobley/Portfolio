@@ -1,4 +1,3 @@
-import React from 'react';
 import Resume1 from '../assets/resume.png';
 
 const Resume = () => {

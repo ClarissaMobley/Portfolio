@@ -1,4 +1,3 @@
-import React from 'react'
 import MeImage from '../assets/MainPage.png'
 import FullStack from '../assets/full-stack-test-2.png'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
