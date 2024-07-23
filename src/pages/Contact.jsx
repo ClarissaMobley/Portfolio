@@ -44,7 +44,7 @@ const Contact = () => {
     }
 
     try {
-      await axios.post('/api/contact', formData);
+      await axios.post('/contact', formData);
       navigate('/message-sent');
     } catch (error) {
       console.error('Error:', error);

@@ -10,7 +10,7 @@ import contactRoutes from './routes/contact.js';
 const app = express();
 
 const corsOptions = {
-  origin: '/api/contact',
+  origin: '/contact',
   methods: 'GET, POST, OPTIONS', 
   allowedHeaders: 'Content-Type, Authorization',
   optionsSuccessStatus: 204 
@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 
 // Handle OPTIONS requests globally
 app.options('*', (req, res) => {
-  res.header('Access-Control-Allow-Origin', '/api/contact');
+  res.header('Access-Control-Allow-Origin', '/contact');
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   res.sendStatus(204);
