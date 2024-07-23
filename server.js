@@ -11,14 +11,22 @@ const app = express();
 
 const corsOptions = {
   origin: 'https://www.clarissamobley.com',
-  methods: 'GET,POST,OPTIONS',
+  methods: 'GET, POST, OPTIONS', 
   allowedHeaders: 'Content-Type, Authorization',
-  optionsSuccessStatus: 204
+  optionsSuccessStatus: 204 
 };
 
 // Middleware
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
+
+// Handle OPTIONS requests globally
+app.options('*', (req, res) => {
+  res.header('Access-Control-Allow-Origin', 'https://www.clarissamobley.com');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.sendStatus(204);
+});
 
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI, {
@@ -27,8 +35,6 @@ mongoose.connect(process.env.MONGO_URI, {
 })
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
-
-app.options('*', cors(corsOptions));
 
 // Routes
 app.use('/api', contactRoutes);
