@@ -13,7 +13,6 @@ const corsOptions = {
   origin: 'https://www.clarissamobley.com',
   methods: 'GET,POST,OPTIONS',
   allowedHeaders: 'Content-Type, Authorization',
-  preflightContinue: false,
   optionsSuccessStatus: 204
 };
 
@@ -31,9 +30,9 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // Routes
 app.use('/api', contactRoutes);
-app.post('/api/contact', (req, res) => {
-  res.send('Contact API');
-});
+
+// Ensure the server handles preflight requests
+app.options('/api/contact', cors(corsOptions));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
