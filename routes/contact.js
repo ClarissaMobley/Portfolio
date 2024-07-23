@@ -27,7 +27,7 @@ router.post('/contact', async (req, res) => {
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
       subject: 'New Contact Form Submission',
-      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`, // Fixed the syntax error by adding backticks and fixing the variable name
+      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     };
 
     // Send Email
