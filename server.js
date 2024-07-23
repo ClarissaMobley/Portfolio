@@ -28,11 +28,10 @@ mongoose.connect(process.env.MONGO_URI, {
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
+app.options('*', cors(corsOptions));
+
 // Routes
 app.use('/api', contactRoutes);
-
-// Ensure the server handles preflight requests
-app.options('/api/contact', cors(corsOptions));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
