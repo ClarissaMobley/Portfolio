@@ -8,12 +8,16 @@ A portfolio of my work as a full stack web developer.
 
 ## Table of Contents
 
+- [Link](#link)
 - [Screenshot](#screenshot)
 - [Screen Recording](#screen-recording)
 - [Built With](#built-with)
 - [License](#license)
 - [Contributing](#contributing)
 - [Questions](#questions)
+
+## Link
+www.clarissamobley.com
 
 ## Screenshot
 
