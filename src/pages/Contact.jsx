@@ -44,11 +44,12 @@ const Contact = () => {
     }
 
     try {
-      await axios.post('https://www.clarissamobley.com/api/contact', formData);
-      navigate('/message-sent');
+      const apiUrl = import.meta.env.VITE_API_URL;
+      await axios.post(`${apiUrl}/contact`, formData);
+      navigate('/message-sent');  
     } catch (error) {
       console.error('Error:', error);
-      navigate('/error');
+      navigate('/error'); 
     }
   };
 
@@ -116,9 +117,3 @@ const Contact = () => {
 }
 
 export default Contact;
-
-
-
-
-
-

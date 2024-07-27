@@ -10,7 +10,7 @@ import contactRoutes from './routes/contact.js';
 const app = express();
 
 const corsOptions = {
-  origin: 'https://www.clarissamobley.com',
+  origin: 'https://portfolio-5sfm.onrender.com',
   methods: 'GET, POST, OPTIONS', 
   allowedHeaders: 'Content-Type, Authorization',
   optionsSuccessStatus: 204 
@@ -22,8 +22,6 @@ app.use(bodyParser.json());
 
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
 })
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
