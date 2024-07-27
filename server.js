@@ -10,7 +10,7 @@ import contactRoutes from './routes/contact.js';
 const app = express();
 
 const corsOptions = {
-  origin: 'https://portfolio-5sfm.onrender.com',
+  origin: process.env.CORS_ORIGIN,
   methods: 'GET, POST, OPTIONS', 
   allowedHeaders: 'Content-Type, Authorization',
   optionsSuccessStatus: 204 
