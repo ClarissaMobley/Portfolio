@@ -10,9 +10,13 @@ import contactRoutes from './routes/contact.js';
 const app = express();
 
 const corsOptions = {
-  origin: [process.env.VITE_API_URL, process.env.VITE_BASE_URL, process.env.VITE_BASE_URL_2],
-  methods: 'GET,POST,OPTIONS',
-  allowedHeaders: 'Content-Type, Authorization',
+  origin: [
+    process.env.CORS_ORIGIN_1,
+    process.env.CORS_ORIGIN_2,
+    process.env.CORS_ORIGIN_3,
+  ],
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
   optionsSuccessStatus: 204
 };
 
@@ -20,8 +24,8 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
-// Handle preflight requests
-app.options('*', cors(corsOptions));
+// Handle preflight requests explicitly if necessary
+// app.options('*', cors(corsOptions)); // Generally not recommended
 
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI, {
