@@ -10,18 +10,23 @@ import contactRoutes from './routes/contact.js';
 const app = express();
 
 const corsOptions = {
-  origin: ['www.clarissamobley.com', 'https://portfolio-5sfm.onrender.com'],
-  methods: 'GET, POST, OPTIONS', 
+  origin: ['https://www.clarissamobley.com', 'https://portfolio-5sfm.onrender.com', 'https://clarissa-mobley-portfolio.onrender.com'],
+  methods: 'GET,POST,OPTIONS',
   allowedHeaders: 'Content-Type, Authorization',
-  optionsSuccessStatus: 204 
+  optionsSuccessStatus: 204
 };
 
 // Middleware
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
+// Handle preflight requests
+app.options('*', cors(corsOptions));
+
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 })
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
