@@ -10,7 +10,7 @@ import contactRoutes from './routes/contact.js';
 const app = express();
 
 const corsOptions = {
-  origin: [process.env.VITE_BASE_URL, process.env.VITE_API_URL],
+  origin: ['www.clarissamobley.com', 'https://portfolio-5sfm.onrender.com'],
   methods: 'GET, POST, OPTIONS', 
   allowedHeaders: 'Content-Type, Authorization',
   optionsSuccessStatus: 204 
