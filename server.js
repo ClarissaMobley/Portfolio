@@ -24,9 +24,6 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
-// Handle preflight requests explicitly if necessary
-// app.options('*', cors(corsOptions)); // Generally not recommended
-
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
