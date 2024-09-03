@@ -17,7 +17,7 @@ import Agora6 from "../assets/agora6.png";
 
 const Projects = () => {
   return (
-    <div className="w-[80%] m-auto pt-11 flex flex-col gap-4 animate-fadeIn">
+    <div className="min-h-screen w-[80%] m-auto pt-11 flex flex-col gap-4 animate-fadeIn">
       <ProjectCard
         title="Agora"
         description="Agora is a dynamic e-commerce marketplace where users can set up their own shops, sell products, and connect with customers. It offers a space for brands to showcase, manage stores, and grow their businesses in an engaging community."

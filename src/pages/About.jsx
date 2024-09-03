@@ -4,7 +4,7 @@ import { SiExpress, SiMongodb, SiPostgresql, SiRender } from 'react-icons/si';
 
 const About = () => {
     return (
-        <div className='bg-custom text-white py-10 md:py-20' id='about'>
+        <div className='min-h-screen bg-custom text-white py-10 md:py-20' id='about'>
             <div className='container mx-auto px-4 md:px-8 lg:px-16'>
                 <div className='flex flex-col md:flex-row items-center md:space-x-12 animate-fadeIn'>
                     <img src={AboutMeImage} alt="About Me" className='w-full md:w-96 mb-8 md:mb-0 hover:scale-105 transition-transform duration-300' />

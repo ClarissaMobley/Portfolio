@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 const Home = () => {
     return (
-        <div className='bg-custom text-white py-20' id='home'>
+        <div className='min-h-screen bg-custom text-white py-20' id='home'>
             <div className='container mx-auto px-8 md:px-16 lg:px-24'>
                 <div className='flex flex-col md:flex-row items-center md:space-x-12 animate-fadeIn'>
                     <div className='flex-1'>

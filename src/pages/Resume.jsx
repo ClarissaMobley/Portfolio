@@ -3,7 +3,7 @@ import ResumePDF from '../assets/ClarissaMobleyResume.pdf';
 
 const Resume = () => {
   return (
-    <div className='flex flex-col items-center animate-fadeIn mt-11 px-4'>
+    <div className='min-h-screen flex flex-col items-center animate-fadeIn mt-11 px-4'>
       <a 
         href={ResumePDF} 
         download="ClarissaMobleyResume.pdf" 
