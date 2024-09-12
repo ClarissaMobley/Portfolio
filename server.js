@@ -14,6 +14,8 @@ const corsOptions = {
     process.env.CORS_ORIGIN_1,
     process.env.CORS_ORIGIN_2,
     process.env.CORS_ORIGIN_3,
+    process.env.CORS_ORIGIN_4,
+    process.env.CORS_ORIGIN_5,
   ],
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
